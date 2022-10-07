@@ -5,30 +5,11 @@ let turn = "x";
 let squares = [];
 let winners = "";
 const button = document.getElementsByTagName("button");
-const divs = document.querySelectorAll("div");
-// reset the game
-function reset() {
-  localStorage.clear();
-  localStorage.setItem('X', 0 );
-  localStorage.setItem('O', 0 );
-  location.reload()
-  for (let i = 1; i < 10; i++) {
-  let element = document.getElementById("item" +i);
-  element.innerHTML = "";
-  }
-  squares = [];
-  winners = "";
-  turn = "x";
-  player1.classList.remove("text-bg-success");
-  player2.classList.remove("text-bg-success");
-  // title.innerHTML = "Tic Tac Toe";
-  console.log('squares :>> ', squares);
-  // title.style.color = "black";
-}
 
 
-function game(e, id) {
-  console.log('divs :>> ', divs);
+
+function game( id) {
+  // console.log('divs :>> ', divs);
   // console.log('id :>> ', id);
   let element = document.getElementById(id);
   let player1 = document.getElementById("player1");
@@ -43,6 +24,7 @@ function game(e, id) {
     // element.style.background = rgb(12, 202, 255);
     return false;
   }
+ 
   if (turn === "x" && element.innerHTML == "") {
     player2.classList.add("text-bg-danger");
     player1.classList.remove("text-bg-danger");
@@ -129,15 +111,17 @@ winners = window.localStorage.getItem(squares[num1]);
 // console.log('winners :>> ', ++winners);
 // debugger;
   localStorage.setItem(squares[num1], ++winners );
-  //   title.innerHTML = `${squares[num1]} winner`;
+ 
   document.getElementById("item" + num1).style.background = "	#00ff7f";
   document.getElementById("item" + num2).style.background = "	#00ff7f";
   document.getElementById("item" + num3).style.background = "	#00ff7f";
   if (squares[num1] == "O") {
+    title.innerHTML = `player 2 is win`; 
     player2.classList.add("text-bg-success");
     player1.classList.remove("text-bg-danger");
   }
   if (squares[num1] == "X") {
+    title.innerHTML = `player 1 is win`;
     player2.classList.remove("text-bg-danger");
     player1.classList.add("text-bg-success");
   }
@@ -147,8 +131,28 @@ winners = window.localStorage.getItem(squares[num1]);
 
   turn = false;
 
-  setInterval(function(){title.innerHTML += '.'},1000);
+  setInterval(function(){title.innerHTML += '.'},500);
   setTimeout(function(){
       location.reload()
-  }, 4000);
+  }, 3000);
+}
+
+
+function reset() {
+  localStorage.clear();
+  localStorage.setItem('X', 0 );
+  localStorage.setItem('O', 0 );
+  location.reload()
+  for (let i = 1; i < 10; i++) {
+  let element = document.getElementById("item" +i);
+  element.innerHTML = "";
+  }
+  squares = [];
+  winners = "";
+  turn = "x";
+  player1.classList.remove("text-bg-success");
+  player2.classList.remove("text-bg-success");
+  // title.innerHTML = "Tic Tac Toe";
+  console.log('squares :>> ', squares);
+  // title.style.color = "black";
 }

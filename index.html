@@ -12,7 +12,7 @@
 
 <body>
     <div>
-        <p class="gameName">game</p>
+        <!-- <p class="gameName">game</p> -->
         <p class="gameName">Tic-Tac-Toe</p>
     </div>
     <div class="loader-wrapper">
@@ -32,17 +32,17 @@
         </div>
         <div class="game">
             <div class="title "><span>X O</span> GAME</div>
-            <div class="square" id="item1" onclick="return game(event ,this.id)"></div>
-            <div class="square" id="item2" onclick="return game(event ,this.id)"></div>
-            <div class="square" id="item3" onclick="return game(event ,this.id)"></div>
+            <div class="square" id="item1" onclick="return game(this.id)"></div>
+            <div class="square" id="item2" onclick="return game(this.id)"></div>
+            <div class="square" id="item3" onclick="return game(this.id)"></div>
 
-            <div class="square" id="item4" onclick="return game(event ,this.id)"></div>
-            <div class="square" id="item5" onclick="return game(event ,this.id)"></div>
-            <div class="square" id="item6" onclick="return game(event ,this.id)"></div>
+            <div class="square" id="item4" onclick="return game(this.id)"></div>
+            <div class="square" id="item5" onclick="return game(this.id)"></div>
+            <div class="square" id="item6" onclick="return game(this.id)"></div>
 
-            <div class="square" id="item7" onclick="return game(event ,this.id)"></div>
-            <div class="square" id="item8" onclick="return game(event ,this.id)"></div>
-            <div class="square" id="item9" onclick="return game(event ,this.id)"></div>
+            <div class="square" id="item7" onclick="return game(this.id)"></div>
+            <div class="square" id="item8" onclick="return game(this.id)"></div>
+            <div class="square" id="item9" onclick="return game(this.id)"></div>
         </div>
         <div class="d-flex justify-content-center p-3">
             <button class="btn btn-primary px-4 h2 fw-bolder" onclick="reset()" >RESET</button>
